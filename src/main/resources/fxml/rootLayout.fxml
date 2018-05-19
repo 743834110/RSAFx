@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lingnan.controller.RootController">
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="文件">
+            <items>
+                  <MenuItem mnemonicParsing="false" text="打开" />
+              <MenuItem mnemonicParsing="false" text="关闭" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="编辑">
+            <items>
+              <MenuItem mnemonicParsing="false" text="删除" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="帮助">
+            <items>
+              <MenuItem mnemonicParsing="false" text="关于" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+        <tabs>
+          <Tab text="生成密钥">
+              <content>
+                  <fx:include source="generateKeyLayout.fxml"/>
+              </content>
+          </Tab>
+          <Tab text="加密/解密">
+            <content>
+                <fx:include source="cryptographyLayout.fxml"/>
+            </content>
+          </Tab>
+          <Tab text="签名">
+            <content>
+                <fx:include source="signLayout.fxml"/>
+            </content>
+          </Tab>
+          <Tab text="验签">
+             <content>
+                 <fx:include source="validateLayout.fxml"/>
+             </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <VBox>
+         <children>
+         </children>
+      </VBox>
+   </children>
+</VBox>

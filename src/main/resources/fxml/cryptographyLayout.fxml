@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane prefHeight="400" prefWidth="600" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lingnan.controller.CryptographyController">
+
+    <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+      <RowConstraints vgrow="NEVER" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="      明文：" />
+            <TextArea fx:id="inputTextArea" layoutX="79.0" layoutY="14.0" prefHeight="175.0" prefWidth="516.0" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="79.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
+            <Button layoutX="531.0" layoutY="148.0" mnemonicParsing="false" onAction="#handleOpenFile" text="导入" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="29.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+         <children>
+            <Button layoutX="70.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleEncryptEvent" text="RSA公钥加密 " />
+            <Button layoutX="229.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleDecryptEvent" text="RSA私钥解密" />
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="      密文：" />
+            <TextArea fx:id="outputTextArea" editable="true" layoutX="79.0" layoutY="14.0" prefHeight="175.0" prefWidth="516.0" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="79.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
+            <Button layoutX="531.0" layoutY="148.0" mnemonicParsing="false" onAction="#handleSaveFile" text="导出" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="29.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane>
+         <children>
+            <Label layoutX="25.0" layoutY="20.0" text="公钥：" />
+            <Label layoutX="25.0" layoutY="56.0" text="私钥：" />
+            <PasswordField fx:id="publicKeyField" layoutX="61.0" layoutY="16.0" prefHeight="23.0" prefWidth="532.0" AnchorPane.leftAnchor="63.0" AnchorPane.rightAnchor="5.0" />
+            <PasswordField fx:id="privateKeyField" layoutX="63.0" layoutY="52.0" prefHeight="23.0" prefWidth="532.0" AnchorPane.leftAnchor="63.0" AnchorPane.rightAnchor="5.0" />
+
+         </children>
+         <GridPane.margin>
+            <Insets bottom="20.0" />
+         </GridPane.margin>
+      </AnchorPane>
+   </children>
+</GridPane>
